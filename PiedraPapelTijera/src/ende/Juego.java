@@ -30,34 +30,28 @@ public class Juego
             
             if((opcion_JUGADOR1.equals("piedra"))&&(opcion_JUGADOR2.equals("papel")))
             {
-                System.out.println("Jugador 2 GANA");
-                EXITOS_jugador2 = ++p2.exitos;
+                EXITOS_jugador2 = jugador2(p2);
                 
             }
             else if((opcion_JUGADOR1.equals("papel"))&&(opcion_JUGADOR2.equals("piedra")))
             {
-            	EXITOS_jugador1 = ++p1.exitos;
-                System.out.println("Jugador 1 GANA");
+            	EXITOS_jugador1 = jugador1(p1);
             }
             else if((opcion_JUGADOR1.equals("piedra"))&&(opcion_JUGADOR2.equals("tijeras")))
             {
-            	EXITOS_jugador1 = ++p1.exitos;
-                System.out.println("Jugador 1 GANA");
+            	EXITOS_jugador1 = jugador1(p1);
             }
             else if((opcion_JUGADOR1.equals("tijeras"))&&(opcion_JUGADOR2.equals("piedra")))
             {
-            	EXITOS_jugador2 = ++p2.exitos;
-                System.out.println("Jugador 2 GANA");
+            	EXITOS_jugador2 = jugador2(p2);
             }
             else if((opcion_JUGADOR1.equals("tijeras"))&&(opcion_JUGADOR2.equals("papel")))
             {
-            	EXITOS_jugador1 = ++p1.exitos;
-                System.out.println("Jugador 1 GANA");
+            	EXITOS_jugador1 = jugador1(p1);
             }
             else if((opcion_JUGADOR1.equals("papel"))&&(opcion_JUGADOR2.equals("tijeras")))
             {
-            	EXITOS_jugador2 = ++p2.exitos;
-                System.out.println("Jugador 2 GANA");
+            	EXITOS_jugador2 = jugador2(p2);
             }
             if(opcion_JUGADOR1==opcion_JUGADOR2)
             {
@@ -73,6 +67,20 @@ public class Juego
             System.out.println();
         } while(fin_de_juego!=true);
     }
+    
+    private static Integer jugador1(Jugador p1) {
+		Integer EXITOS_jugador1;
+		EXITOS_jugador1 = ++p1.exitos;
+		System.out.println("Jugador 1 GANA");
+		return EXITOS_jugador1;
+	}
+
+	private static Integer jugador2(Jugador p2) {
+		Integer EXITOS_jugador2;
+		System.out.println("Jugador 2 GANA");
+		EXITOS_jugador2 = ++p2.exitos;
+		return EXITOS_jugador2;
+	}
 }
 /**
  *
